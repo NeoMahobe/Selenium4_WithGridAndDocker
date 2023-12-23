@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="way2Automation" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="com.way2automation.qa.extentreportlistener.ExtentReporterNG" />
+	</listeners>
+	<test name="ChromeTests">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="environment" value="live" />
+		<classes>
+			<class name="way2automation.AddUser"></class>
+		</classes>
+	</test>
+	<test name="EdgeTests">
+		<parameter name="browser" value="Edge" />
+		<parameter name="environment" value="live" />
+		<classes>
+			<class name="way2automation.CheckCustomerValueIsCaptured"></class>
+		</classes>
+	</test>
+</suite>

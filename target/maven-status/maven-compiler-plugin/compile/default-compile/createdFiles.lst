@@ -1,0 +1,7 @@
+com\way2automation\qa\utilities\WebDriverFactory.class
+com\way2automation\qa\utilities\TestUtil$1.class
+com\way2automation\qa\extentreportlistener\ExtentReporterNG.class
+com\way2automation\qa\pages\WebTablesPage.class
+com\way2automation\qa\base\TestBase.class
+com\way2automation\qa\utilities\TestUtil.class
+com\way2automation\qa\pages\Page.class
