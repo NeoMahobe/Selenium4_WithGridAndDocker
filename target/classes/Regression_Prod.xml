@@ -5,14 +5,14 @@
 		<listener class-name="com.way2automation.qa.extentreportlistener.ExtentReporterNG" />
 	</listeners>
 	<test name="ChromeTests">
-		<parameter name="browser" value="Chrome" />
+		<parameter name="browser" value="Remote-Chrome" />
 		<parameter name="environment" value="live" />
 		<classes>
 			<class name="way2automation.AddUser"></class>
 		</classes>
 	</test>
 	<test name="EdgeTests">
-		<parameter name="browser" value="Edge" />
+		<parameter name="browser" value="Remote-Edge" />
 		<parameter name="environment" value="live" />
 		<classes>
 			<class name="way2automation.CheckCustomerValueIsCaptured"></class>

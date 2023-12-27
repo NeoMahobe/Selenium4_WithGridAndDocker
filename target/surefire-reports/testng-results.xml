@@ -1,41 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-20T18:51:00 SAST" name="way2Automation" finished-at="2023-12-20T18:51:54 SAST" duration-ms="53265">
+  <suite started-at="2023-12-26T21:53:27 SAST" name="way2Automation" finished-at="2023-12-26T21:53:54 SAST" duration-ms="26482">
     <groups>
     </groups>
-    <test started-at="2023-12-20T18:51:00 SAST" name="Way2Automation Test Cases" finished-at="2023-12-20T18:51:54 SAST" duration-ms="53265">
+    <test started-at="2023-12-26T21:53:27 SAST" name="EdgeTests" finished-at="2023-12-26T21:53:46 SAST" duration-ms="18808">
       <class name="way2automation.CheckCustomerValueIsCaptured">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@7ce3cb8e]" started-at="2023-12-20T18:51:00 SAST" name="setUp" finished-at="2023-12-20T18:51:23 SAST" duration-ms="22448" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@353d0772]" started-at="2023-12-26T21:53:27 SAST" name="setUp" finished-at="2023-12-26T21:53:34 SAST" duration-ms="6492" status="PASS">
           <params>
             <param index="0">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[live]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Remote-Edge]]>
+              </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="CheckCustomerValueIsCaptured()[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@7ce3cb8e]" started-at="2023-12-20T18:51:23 SAST" name="CheckCustomerValueIsCaptured" finished-at="2023-12-20T18:51:45 SAST" duration-ms="21892" status="FAIL">
-          <exception class="org.apache.poi.EmptyFileException">
+        <test-method signature="BugTest_CheckCustomerValueIsCaptured()[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@353d0772]" started-at="2023-12-26T21:53:34 SAST" name="BugTest_CheckCustomerValueIsCaptured" finished-at="2023-12-26T21:53:45 SAST" duration-ms="11342" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[The supplied file was empty (zero bytes long)]]>
+              <![CDATA[Element is not displayed as expected!]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.apache.poi.EmptyFileException: The supplied file was empty (zero bytes long)
-at org.apache.poi.util.IOUtils.peekFirstNBytes(IOUtils.java:83)
-at org.apache.poi.util.IOUtils.peekFirst8Bytes(IOUtils.java:66)
-at org.apache.poi.poifs.filesystem.FileMagic.valueOf(FileMagic.java:171)
-at org.apache.poi.openxml4j.opc.internal.ZipHelper.verifyZipHeader(ZipHelper.java:143)
-at org.apache.poi.openxml4j.opc.internal.ZipHelper.openZipStream(ZipHelper.java:175)
-at org.apache.poi.openxml4j.opc.ZipPackage.<init>(ZipPackage.java:104)
-at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:301)
-at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:37)
-at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:303)
-at com.way2automation.qa.utilities.TestUtil.SelectDataFromExcel(TestUtil.java:44)
-at com.way2automation.qa.pages.Page.RetrieveAndSendKeys(Page.java:82)
-at com.way2automation.qa.pages.WebTablesPage.CaptureUserDetails(WebTablesPage.java:104)
-at way2automation.CheckCustomerValueIsCaptured.CheckCustomerValueIsCaptured(CheckCustomerValueIsCaptured.java:36)
+              <![CDATA[java.lang.AssertionError: Element is not displayed as expected!
+at org.testng.Assert.fail(Assert.java:99)
+at com.way2automation.qa.pages.Page.IsDisplayed(Page.java:100)
+at com.way2automation.qa.pages.WebTablesPage.VerifyEntriesInTable(WebTablesPage.java:155)
+at way2automation.CheckCustomerValueIsCaptured.BugTest_CheckCustomerValueIsCaptured(CheckCustomerValueIsCaptured.java:40)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,20 +46,28 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:425)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:66)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:840)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.apache.poi.EmptyFileException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckCustomerValueIsCaptured -->
-        <test-method is-config="true" signature="closeDown(org.testng.ITestResult)[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@7ce3cb8e]" started-at="2023-12-20T18:51:45 SAST" name="closeDown" finished-at="2023-12-20T18:51:48 SAST" duration-ms="2937" status="PASS">
+        </test-method> <!-- BugTest_CheckCustomerValueIsCaptured -->
+        <test-method is-config="true" signature="closeDown(org.testng.ITestResult)[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@353d0772]" started-at="2023-12-26T21:53:45 SAST" name="closeDown" finished-at="2023-12-26T21:53:46 SAST" duration-ms="883" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=CheckCustomerValueIsCaptured status=FAILURE method=CheckCustomerValueIsCaptured.CheckCustomerValueIsCaptured()[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@7ce3cb8e] output={null}]]]>
+                <![CDATA[[TestResult name=BugTest_CheckCustomerValueIsCaptured status=FAILURE method=CheckCustomerValueIsCaptured.BugTest_CheckCustomerValueIsCaptured()[pri:0, instance:way2automation.CheckCustomerValueIsCaptured@353d0772] output={null}]]]>
               </value>
             </param>
           </params>
@@ -69,25 +75,70 @@ at java.base/java.lang.Thread.run(Thread.java:840)
           </reporter-output>
         </test-method> <!-- closeDown -->
       </class> <!-- way2automation.CheckCustomerValueIsCaptured -->
+    </test> <!-- EdgeTests -->
+    <test started-at="2023-12-26T21:53:27 SAST" name="ChromeTests" finished-at="2023-12-26T21:53:54 SAST" duration-ms="26482">
       <class name="way2automation.AddUser">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-20T18:51:00 SAST" name="setUp" finished-at="2023-12-20T18:51:23 SAST" duration-ms="22539" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-26T21:53:27 SAST" name="setUp" finished-at="2023-12-26T21:53:34 SAST" duration-ms="6476" status="PASS">
           <params>
             <param index="0">
-              <value is-null="true"/>
+              <value>
+                <![CDATA[live]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Remote-Chrome]]>
+              </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="AddMultipleUsers()[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-20T18:51:23 SAST" name="AddMultipleUsers" finished-at="2023-12-20T18:51:53 SAST" duration-ms="30095" status="PASS">
+        <test-method signature="AddMultipleUsers()[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-26T21:53:34 SAST" name="AddMultipleUsers" finished-at="2023-12-26T21:53:53 SAST" duration-ms="19359" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Element is not displayed as expected!]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Element is not displayed as expected!
+at org.testng.Assert.fail(Assert.java:99)
+at com.way2automation.qa.pages.Page.IsDisplayed(Page.java:100)
+at com.way2automation.qa.pages.WebTablesPage.VerifyEntriesInTable(WebTablesPage.java:155)
+at way2automation.AddUser.AddMultipleUsers(AddUser.java:34)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:425)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:66)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddMultipleUsers -->
-        <test-method is-config="true" signature="closeDown(org.testng.ITestResult)[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-20T18:51:53 SAST" name="closeDown" finished-at="2023-12-20T18:51:54 SAST" duration-ms="565" status="PASS">
+        <test-method is-config="true" signature="closeDown(org.testng.ITestResult)[pri:0, instance:way2automation.AddUser@10e92f8f]" started-at="2023-12-26T21:53:53 SAST" name="closeDown" finished-at="2023-12-26T21:53:54 SAST" duration-ms="567" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddMultipleUsers status=SUCCESS method=AddUser.AddMultipleUsers()[pri:0, instance:way2automation.AddUser@10e92f8f] output={null}]]]>
+                <![CDATA[[TestResult name=AddMultipleUsers status=FAILURE method=AddUser.AddMultipleUsers()[pri:0, instance:way2automation.AddUser@10e92f8f] output={null}]]]>
               </value>
             </param>
           </params>
@@ -95,6 +146,6 @@ at java.base/java.lang.Thread.run(Thread.java:840)
           </reporter-output>
         </test-method> <!-- closeDown -->
       </class> <!-- way2automation.AddUser -->
-    </test> <!-- Way2Automation Test Cases -->
+    </test> <!-- ChromeTests -->
   </suite> <!-- way2Automation -->
 </testng-results>

@@ -56,7 +56,7 @@ public class WebDriverFactory {
                 egde_remote_options.setCapability("se:downloadsEnabled", true);
                 egde_remote_options.addArguments("--disable-popup-blocking");
                 egde_remote_options.addArguments("--inprivate");
-                egde_remote_options.addArguments("headless");
+                //egde_remote_options.addArguments("headless");
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), egde_remote_options);
                 break;
         }

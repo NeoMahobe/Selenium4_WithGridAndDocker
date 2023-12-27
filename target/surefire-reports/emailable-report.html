@@ -9,28 +9,32 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">way2Automation</th></tr>
-<tr><td><a href="#t0">Way2Automation Test Cases</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">53,265</td><td></td><td></td></tr>
+<tr><td><a href="#t0">EdgeTests</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">18,808</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">ChromeTests</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">26,482</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num attn">2</th><th class="num">45,290</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">way2Automation</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Way2Automation Test Cases &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">way2automation.CheckCustomerValueIsCaptured</td><td><a href="#m0">CheckCustomerValueIsCaptured</a></td><td rowspan="1">1703091083320</td><td rowspan="1">21892</td></tr><tr><th colspan="4">Way2Automation Test Cases &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">way2automation.AddUser</td><td><a href="#m1">AddMultipleUsers</a></td><td rowspan="1">1703091083404</td><td rowspan="1">30095</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">way2Automation</th></tr></tbody><tbody id="t0"><tr><th colspan="4">EdgeTests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">way2automation.CheckCustomerValueIsCaptured</td><td><a href="#m0">BugTest_CheckCustomerValueIsCaptured</a></td><td rowspan="1">1703620414427</td><td rowspan="1">11342</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">ChromeTests &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">way2automation.AddUser</td><td><a href="#m1">AddMultipleUsers</a></td><td rowspan="1">1703620414412</td><td rowspan="1">19359</td></tr></tbody>
 </table>
-<h2>Way2Automation Test Cases</h2><h3 id="m0">way2automation.CheckCustomerValueIsCaptured#CheckCustomerValueIsCaptured</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.apache.poi.EmptyFileException: The supplied file was empty (zero bytes long)
-	at org.apache.poi.util.IOUtils.peekFirstNBytes(IOUtils.java:83)
-	at org.apache.poi.util.IOUtils.peekFirst8Bytes(IOUtils.java:66)
-	at org.apache.poi.poifs.filesystem.FileMagic.valueOf(FileMagic.java:171)
-	at org.apache.poi.openxml4j.opc.internal.ZipHelper.verifyZipHeader(ZipHelper.java:143)
-	at org.apache.poi.openxml4j.opc.internal.ZipHelper.openZipStream(ZipHelper.java:175)
-	at org.apache.poi.openxml4j.opc.ZipPackage.&lt;init&gt;(ZipPackage.java:104)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:301)
-	at org.apache.poi.ooxml.util.PackageHelper.open(PackageHelper.java:37)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.&lt;init&gt;(XSSFWorkbook.java:303)
-	at com.way2automation.qa.utilities.TestUtil.SelectDataFromExcel(TestUtil.java:44)
-	at com.way2automation.qa.pages.Page.RetrieveAndSendKeys(Page.java:82)
-	at com.way2automation.qa.pages.WebTablesPage.CaptureUserDetails(WebTablesPage.java:104)
-	at way2automation.CheckCustomerValueIsCaptured.CheckCustomerValueIsCaptured(CheckCustomerValueIsCaptured.java:36)
+<h2>EdgeTests</h2><h3 id="m0">way2automation.CheckCustomerValueIsCaptured#BugTest_CheckCustomerValueIsCaptured</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Element is not displayed as expected!
+	at com.way2automation.qa.pages.Page.IsDisplayed(Page.java:100)
+	at com.way2automation.qa.pages.WebTablesPage.VerifyEntriesInTable(WebTablesPage.java:155)
+	at way2automation.CheckCustomerValueIsCaptured.BugTest_CheckCustomerValueIsCaptured(CheckCustomerValueIsCaptured.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:840)
-... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">way2automation.AddUser#AddMultipleUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>ChromeTests</h2><h3 id="m1">way2automation.AddUser#AddMultipleUsers</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Element is not displayed as expected!
+	at com.way2automation.qa.pages.Page.IsDisplayed(Page.java:100)
+	at com.way2automation.qa.pages.WebTablesPage.VerifyEntriesInTable(WebTablesPage.java:155)
+	at way2automation.AddUser.AddMultipleUsers(AddUser.java:34)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

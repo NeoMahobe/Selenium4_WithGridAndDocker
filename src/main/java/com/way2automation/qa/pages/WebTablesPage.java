@@ -41,6 +41,10 @@ public class WebTablesPage extends Page {
     private String randomUserName;
     private String stringValue;
     private String userName;
+    private String firstName;
+    private String lastName;
+    private String emailAddress;
+    private String cellNumber;
 
     //Initializing the Page Object
     public WebTablesPage(WebDriver driver) {
@@ -63,15 +67,18 @@ public class WebTablesPage extends Page {
         return this;
     }
 
-    public WebTablesPage GetUserDetails(int selection) throws IOException, FilloException{
+    public WebTablesPage GetUserDetails(int selection) throws IOException{
         stringValue = String.valueOf(selection);
         Faker faker = new Faker();
         TestUtil testUtil = new TestUtil();
         //Create Unique Username everytime
         this.randomUserName = faker.number().digits(10);
-        System.out.println("This is the username  for instance "+ randomUserName);
         //Store unique username in flat file and use later in the test to assert against
-        testUtil.UpdateDataInExcel("UserName", randomUserName, stringValue, "ID");
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        //testUtil.UpdateDataInExcel("UserName", randomUserName, stringValue, "ID");
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+
         //this.value = testUtil.SelectDataFromExcel("UserName", selection);
 
         CaptureUserDetails(selection);
@@ -100,13 +107,16 @@ public class WebTablesPage extends Page {
     }
 
     public WebTablesPage CaptureUserDetails(int selection) throws IOException {
-        this.RetrieveAndSendKeys(firstNameInputBox, "FirstName", selection);
-        this.RetrieveAndSendKeys(lastNameInputBox, "LastName", selection);
-        this.RetrieveAndSendKeys(userNameInputBox, "UserName", selection);
-        this.RetrieveAndSendKeys(passwordInputBox, "Password", selection);
+        Faker faker = new Faker();
+        this.SendKeys(firstNameInputBox, this.firstName = faker.name().firstName());
+        this.SendKeys(lastNameInputBox, this.lastName = faker.name().lastName());
+        //this.RetrieveAndSendKeys(userNameInputBox, "UserName", selection);
+        this.SendKeys(userNameInputBox,this.randomUserName = faker.number().digits(10));
+        System.out.println("Let's check if username is always random: "+ randomUserName);
+        this.SendKeys(passwordInputBox, firstName+randomUserName);
         GetAndClickElements(selection);
-        this.RetrieveAndSendKeys(emailInputBox, "Email", selection);
-        this.RetrieveAndSendKeys(mobilePhoneInputBox, "Cell", selection);
+        this.SendKeys(emailInputBox, this.emailAddress = faker.internet().emailAddress());
+        this.SendKeys(mobilePhoneInputBox, this.cellNumber = faker.phoneNumber().cellPhone());
         return this;
     }
 

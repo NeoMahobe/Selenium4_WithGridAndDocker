@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.io.IOException;
+
 public class CheckCustomerValueIsCaptured extends TestBase {
 
     private WebDriver driver;
@@ -24,18 +26,18 @@ public class CheckCustomerValueIsCaptured extends TestBase {
      * The test will fail as the bug still persists
      *  */
     @Test
-    public void BugTest_CheckCustomerValueIsCaptured() {
+    public void BugTest_CheckCustomerValueIsCaptured() throws IOException {
 
         driver = GetWebDriver();
         testUtil = new TestUtil();
         webTablesPage = new WebTablesPage(driver);
 
         webTablesPage
-                .NavigateToWebTables();
-//                .ClickAddUserButton()
-//                .CaptureUserDetails(1)
-//                .ClickSaveButton()
-//                .VerifyEntriesInTable(1,"Customer");
+                .NavigateToWebTables()
+                .ClickAddUserButton()
+                .CaptureUserDetails(1)
+                .ClickSaveButton()
+                .VerifyEntriesInTable(1,"Customer");
     }
 
     @AfterMethod
