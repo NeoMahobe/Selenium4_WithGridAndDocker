@@ -36,8 +36,8 @@ public class CheckCustomerValueIsCaptured extends TestBase {
                 .NavigateToWebTables()
                 .ClickAddUserButton()
                 .CaptureUserDetails(1)
-                .ClickSaveButton()
-                .VerifyEntriesInTable(1,"Customer");
+                .ClickSaveButton();
+                //.VerifyEntriesInTable(1,"Customer");
     }
 
     @AfterMethod

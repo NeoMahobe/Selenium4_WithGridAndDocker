@@ -42,7 +42,7 @@ public class WebDriverFactory {
                 SessionId sessionEdge = ((EdgeDriver)driver).getSessionId();
                 System.out.println("Edge Session id: " + sessionEdge.toString());
                 break;
-            case "Remote-Chrome":
+            case "Local-Remote-Chrome":
                 ChromeOptions chrome_remote_options = new ChromeOptions();
                 chrome_remote_options.setCapability("se:downloadsEnabled", true);
                 chrome_remote_options.addArguments("Remove --disable-infobars");
@@ -51,13 +51,21 @@ public class WebDriverFactory {
                 //chrome_remote_options.addArguments("--headless");
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chrome_remote_options);
                 break;
-            case "Remote-Edge":
+            case "Local-Remote-Edge":
                 EdgeOptions egde_remote_options = new EdgeOptions();
                 egde_remote_options.setCapability("se:downloadsEnabled", true);
                 egde_remote_options.addArguments("--disable-popup-blocking");
                 egde_remote_options.addArguments("--inprivate");
                 //egde_remote_options.addArguments("headless");
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), egde_remote_options);
+                break;
+            case "Aws-Chrome":
+                ChromeOptions chrome_aws_options = new ChromeOptions();
+                driver = new RemoteWebDriver(new URL("{InstancePublicIp}:4444"),chrome_aws_options);
+                break;
+            case "Aws-Edge":
+                EdgeOptions egde_aws_options = new EdgeOptions();
+                driver = new RemoteWebDriver(new URL("{InstancePublicIp}:4444"), egde_aws_options);
                 break;
         }
         return driver;

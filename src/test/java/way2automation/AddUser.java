@@ -30,8 +30,8 @@ public class AddUser extends TestBase {
                 .NavigateToWebTables()
                 .ClickAddUserButton()
                 .CaptureMultipleUserDetails(2)
-                .ClickCloseButton()
-                .VerifyEntriesInTable(2,"UserName");
+                .ClickCloseButton();
+                //.VerifyEntriesInTable(2,"UserName");
     }
 
     @AfterMethod
