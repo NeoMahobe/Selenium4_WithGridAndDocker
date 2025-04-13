@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.SessionId;
 
@@ -26,7 +25,7 @@ public class WebDriverFactory {
                 //chrome_options.addArguments("Remove --disable-infobars");
                 //chrome_options.addArguments("disable-popup-blocking");
                 chrome_options.addArguments("--remote-allow-origins=*");
-                chrome_options.addArguments("--incognito");
+                //chrome_options.addArguments("--incognito");
                 driver = new ChromeDriver(chrome_options);
                 SessionId sessionChome = ((ChromeDriver)driver).getSessionId();
                 System.out.println("Chrome Session id: " + sessionChome.toString());
@@ -36,7 +35,7 @@ public class WebDriverFactory {
                 //System.setProperty("webdriver.edge.driver", edgedriverFilePath);
                 EdgeOptions edge_options = new EdgeOptions();
                 edge_options.addArguments("--disable-popup-blocking");
-                edge_options.addArguments("--inprivate");
+                //edge_options.addArguments("--inprivate");
                 //edge_options.addArguments("--remote-allow-origins=*");
                 driver = new EdgeDriver(edge_options);
                 SessionId sessionEdge = ((EdgeDriver)driver).getSessionId();

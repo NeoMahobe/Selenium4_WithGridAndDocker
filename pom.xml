@@ -25,7 +25,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<!--suppress UnresolvedMavenProperty -->
-						<suiteXmlFile>src/main/resources/Regression_Prod.xml</suiteXmlFile>
+						<suiteXmlFile>src/main/resources/Regression_Local_Execution.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
